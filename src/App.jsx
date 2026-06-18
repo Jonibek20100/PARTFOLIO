@@ -3,7 +3,7 @@ import './App.css';
 import img from "./image.png";
 import { 
   FiHome, FiCpu, FiFolder, FiMail, FiMapPin, FiUser,
-  FiEye, FiUsers, FiTrendingUp, FiArrowRight, FiPlay, FiExternalLink,
+  FiArrowRight, FiPlay, FiExternalLink,
   FiInstagram, FiGithub, FiFacebook
 } from 'react-icons/fi';
 import { FaTelegramPlane } from 'react-icons/fa';
@@ -29,38 +29,38 @@ function App() {
   ];
 
   // 1-SAHIFA: HOME
-const renderHome = () => (
-  <div className="page-fade-in fade-container">
-    <div className="hero-section">
-      <span className="badge">FRONTEND DEVELOPER portfolio</span>
-      <h1>
-        I’m a Frontend Developer <br />
-        <span className="purple-text">JONIBEK</span>
-      </h1>
-      <p className="description">
-        I’m a Frontend Developer specializing in creating modern websites, focusing on UI/UX, design, and full functionality, including SSL, domains, hosting, and SEO.
-      </p>
-      <div className="cta-buttons">
-        <button className="btn-primary" onClick={() => setActiveNav('contact')}>
-          Apply Now <FiArrowRight />
-        </button>
-        <button className="btn-secondary">
-          Watch the Video <FiPlay className="play-icon" />
-        </button>
+  const renderHome = () => (
+    <div className="page-fade-in fade-container">
+      <div className="hero-section">
+        <span className="badge">FRONTEND DEVELOPER portfolio</span>
+        <h1>
+          I’m a Frontend Developer <br />
+          <span className="purple-text">JONIBEK</span>
+        </h1>
+        <p className="description">
+          I’m a Frontend Developer specializing in creating modern websites, focusing on UI/UX, design, and full functionality, including SSL, domains, hosting, and SEO.
+        </p>
+        <div className="cta-buttons">
+          <button className="btn-primary" onClick={() => setActiveNav('contact')}>
+            Apply Now <FiArrowRight />
+          </button>
+          <button className="btn-secondary">
+            Watch the Video <FiPlay className="play-icon" />
+          </button>
+        </div>
+      </div>
+
+      {/* Statistika o'rniga premium rasm bloki */}
+      <div className="hero-image-container">
+        <div className="image-glow-effect"></div>
+        <img 
+          src={img} 
+          alt="Jonibek - Frontend Developer" 
+          className="hero-profile-img"
+        />
       </div>
     </div>
-
-    {/* Statistika o'rniga premium rasm bloki */}
-    <div className="hero-image-container">
-      <div className="image-glow-effect"></div>
-      <img 
-        src={img} // Bu yerga o'zingizni rasmingiz linkini qo'yasiz (masalan: /images/jonibek.jpg)
-        alt="Jonibek - Frontend Developer" 
-        className="hero-profile-img"
-      />
-    </div>
-  </div>
-);
+  );
 
   // 2-SAHIFA: ABOUT ME
   const renderAbout = () => (
@@ -85,32 +85,32 @@ const renderHome = () => (
             and create projects that make an impact.
           </p>
 
-         <div className="about-social-circles">
-  {/* Telegram - 1-rasm: @dasturmash */}
-  <a href="https://t.me/dasturmash" target="_blank" rel="noopener noreferrer" className="social-ring" title="Telegram">
-    <FaTelegramPlane />
-  </a>
+          <div className="about-social-circles">
+            {/* Telegram - @dasturmash */}
+            <a href="https://t.me/dasturmash" target="_blank" rel="noopener noreferrer" className="social-ring" title="Telegram">
+              <FaTelegramPlane />
+            </a>
 
-  {/* Instagram - 2-rasm: jonibek_js_ */}
-  <a href="https://instagram.com/jonibek_js_" target="_blank" rel="noopener noreferrer" className="social-ring" title="Instagram">
-    <FiInstagram />
-  </a>
+            {/* Instagram - jonibek_js_ */}
+            <a href="https://instagram.com/jonibek_js_" target="_blank" rel="noopener noreferrer" className="social-ring" title="Instagram">
+              <FiInstagram />
+            </a>
 
-  {/* GitHub - 3 va 4-rasm: jonibek20100 */}
-  <a href="https://github.com/jonibek20100" target="_blank" rel="noopener noreferrer" className="social-ring" title="GitHub">
-    <FiGithub />
-  </a>
+            {/* GitHub - jonibek20100 */}
+            <a href="https://github.com/jonibek20100" target="_blank" rel="noopener noreferrer" className="social-ring" title="GitHub">
+              <FiGithub />
+            </a>
 
-  {/* Vercel - GitHub nomingiz asosida sozlindi */}
-  <a href="https://vercel.com/jonibek20100" target="_blank" rel="noopener noreferrer" className="social-ring" title="Vercel">
-    <SiVercel />
-  </a>
+            {/* Vercel */}
+            <a href="https://vercel.com/jonibek20100" target="_blank" rel="noopener noreferrer" className="social-ring" title="Vercel">
+              <SiVercel />
+            </a>
 
-  {/* Facebook - Profilingizga moslashtirildi */}
-  <a href="https://facebook.com/jonibek20100" target="_blank" rel="noopener noreferrer" className="social-ring" title="Facebook">
-    <FiFacebook />
-  </a>
-</div>
+            {/* Facebook */}
+            <a href="https://facebook.com/jonibek20100" target="_blank" rel="noopener noreferrer" className="social-ring" title="Facebook">
+              <FiFacebook />
+            </a>
+          </div>
 
           <button className="view-projects-btn" onClick={() => setActiveNav('projects')}>
             VIEW MY PROJECTS
@@ -167,7 +167,6 @@ const renderHome = () => (
     <div className="page-fade-in projects-page">
       <div className="projects-header">
         <h2>Mening Loyihalarim va Dasturlarim</h2>
-       
       </div>
       
       <div className="phone-grid">
@@ -277,9 +276,8 @@ const renderHome = () => (
     );
   };
 
-  // 6-SAHIFA: LOCATION (YANGILANGAN: O'zbekiston, Samarqand, TATU xaritasi)
+  // 6-SAHIFA: LOCATION
   const renderLocation = () => {
-    // Tanlangan joyga qarab ma'lumotlar o'zgarishi uchun obyekt
     const pointsData = {
       uzb: {
         title: "O'zbekiston Respublikasi",
@@ -306,18 +304,14 @@ const renderHome = () => (
         <h2>Geolokatsiya va Manzil</h2>
         
         <div className="map-dashboard-layout">
-          {/* Chap tomonda vizual interaktiv minimalist xarita */}
           <div className="custom-map-container">
             <div className="map-frame">
-              {/* O'zbekiston chegarasi o'rnida katta kontur */}
               <div className="map-country-layer">UZBEKISTAN</div>
               
-              {/* Samarqand viloyati hududi */}
               <div className={`map-region-layer ${selectedPoint === 'sam' ? 'active-region' : ''}`} onClick={() => setSelectedPoint('sam')}>
                 <span>SAMARQAND</span>
               </div>
 
-              {/* Xaritadagi pin nuqtalar */}
               <div 
                 className={`map-pin-point pin-uzb ${selectedPoint === 'uzb' ? 'pulse-pin' : ''}`} 
                 onClick={() => setSelectedPoint('uzb')}
@@ -343,7 +337,6 @@ const renderHome = () => (
               </div>
             </div>
 
-            {/* Pastki tezkor boshqaruv tugmachalari */}
             <div className="map-switchers">
               <button className={selectedPoint === 'uzb' ? 'active' : ''} onClick={() => setSelectedPoint('uzb')}>O'zbekiston</button>
               <button className={selectedPoint === 'sam' ? 'active' : ''} onClick={() => setSelectedPoint('sam')}>Samarqand</button>
@@ -351,7 +344,6 @@ const renderHome = () => (
             </div>
           </div>
 
-          {/* O'ng tomonda tanlangan nuqtaning batafsil tavsif paneli */}
           <div className="map-details-sidebar">
             <div className="cyber-glass-info">
               <span className="location-badge-top">MANZIL DETALLARI</span>
